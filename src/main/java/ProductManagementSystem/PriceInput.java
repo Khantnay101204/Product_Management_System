@@ -1,7 +1,9 @@
 package ProductManagementSystem;
 
-public class PriceInput implements UserInput{
+import java.util.Scanner;
 
+public class PriceInput implements UserInput{
+    Scanner sc=new Scanner(System.in);
     @Override
     public String input() {
         System.out.print("Enter price (1-1000): ");
@@ -14,5 +16,17 @@ public class PriceInput implements UserInput{
         return price;
 
     }
+    public String input(Scanner sc) {
+        System.out.print("Enter price (1-1000): ");
+        String price =sc.next();
+        if(!price.matches("^([1-9]|[1-9][0-9]{1,2}|1000)$")){
+            System.out.println("Invalid or over the price limit. Enter again.");
+            return input();
+        }
+
+        return price;
+
+    }
+
 
 }
