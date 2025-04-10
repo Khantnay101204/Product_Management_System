@@ -9,6 +9,8 @@ import java.util.LinkedList;
 public abstract class ProductCSVHandler {
     protected LinkedList<Product> productList=new LinkedList<>();
     protected String filePath;
+    protected UserInputOptions uin=UserInputOptions.getInstance();
+    protected SearchProduct search=SearchProduct.getInstance();
 
     public ProductCSVHandler(String filePath) {
         this.filePath = filePath;
@@ -81,7 +83,7 @@ public abstract class ProductCSVHandler {
                     product.getStock() + "," + product.getColor() + "," + product.getSize() + "," +
                     product.getAvailability() + "," + product.getInternalID());
         }
-        System.out.println("booya");
+
         pw.close();
         try {
             fw.close();

@@ -6,7 +6,7 @@ public class AvailabilityInput implements UserInput {
         String availability="";
         System.out.println("1. In stock\n2. Out of stock\n3. Limited stock\n4.Backorder\n5. Preorder\n6. Discontinued");
         System.out.print("Choose an option above (1-6): ");
-        String option=sc.next();
+        String option=sc.nextLine();
         switch (option){
             case "1": availability="in_stock";
             break;

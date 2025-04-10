@@ -12,24 +12,28 @@ public class SizeInput implements UserInput{
             count++;
         }
         System.out.print("Choose a size above: ");
-        int option=sc.nextInt();
+        String op=sc.nextLine();
+        int option=0;
+        if (!op.matches("^(1[0-3]|[1-9])$")){
+            input();
+        }
+        else {
+             option=Integer.parseInt(op);
+        }
         if (option<=10&& option>0){
             size=options[option-1];
         }
         else if(option<=13 && option>=11){
             size=lengthAndWidth()+" "+options[option-1];
         }
-        else {
-            input();
-        }
         return size;
 
     }
     private static String lengthAndWidth(){
         System.out.print("Length: ");
-        String length=sc.next();
+        String length=sc.nextLine();
         System.out.print("Width: ");
-        String width=sc.next();
+        String width=sc.nextLine();
         if (!width.matches("^(1000|[1-9][0-9]{0,2})$") || !length.matches("^(1000|[1-9][0-9]{0,2})$")){
             System.out.println("Invalid input. Please try again");
             return lengthAndWidth();

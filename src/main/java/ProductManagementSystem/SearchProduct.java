@@ -14,6 +14,7 @@ public class SearchProduct {
     }
 
     public int searchByName_and_Category(LinkedList<Product> productList,String name, String category){
+
         int idx=0;
         for (Product product: productList){
             if (product.getName().equalsIgnoreCase(name) && product.getCategory().equalsIgnoreCase(category)){

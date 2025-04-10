@@ -6,7 +6,7 @@ public class ColorInput implements UserInput{
     public String input() {
         System.out.print("Enter color: ");
         String color =sc.nextLine();
-        if(!color.matches("[A-Z][a-z]{1,30}")){
+        if(!color.matches("^[A-Z][a-zA-Z]*$")){
             System.out.println("Invalid input. Enter again.");
             return input();
         }
