@@ -5,12 +5,14 @@ import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.*;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public abstract class ProductCSVHandler {
     protected LinkedList<Product> productList=new LinkedList<>();
     protected String filePath;
-    protected UserInputOptions uin=UserInputOptions.getInstance();
-    protected SearchProduct search=SearchProduct.getInstance();
+    protected static UserInputOptions uin=UserInputOptions.getInstance();
+    protected static SearchProduct search=SearchProduct.getInstance();
+    protected static Scanner sc=new Scanner(System.in);
 
     public ProductCSVHandler(String filePath) {
         this.filePath = filePath;

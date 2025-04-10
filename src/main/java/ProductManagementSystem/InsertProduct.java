@@ -16,8 +16,9 @@ public class InsertProduct extends ProductCSVHandler{
         if (search.searchByName_and_Category(productList,name,category)>=0){
             System.out.println("Product already exists");
             executeOperation(productList);
+            return;
         }
-        System.out.println(search.searchByName_and_Category(productList,name,category));
+
         String description = uin.getDescription();
         String brand = uin.getBrand();
         String price = uin.getPrice();
@@ -31,11 +32,10 @@ public class InsertProduct extends ProductCSVHandler{
 
     }
 
-    public static void main(String[] args) {
-        String csv="Data/products dataset.csv";
-        LinkedList<Product> productList=new LinkedList<>();
-        ProductCSVHandler Inproduct= new InsertProduct(csv);
-        Inproduct.process();
-
-    }
+//    public static void main(String[] args) {
+//        String csv="Data/products dataset.csv";
+//        ProductCSVHandler Inproduct= new InsertProduct(csv);
+//        Inproduct.process();
+//
+//    }
 }

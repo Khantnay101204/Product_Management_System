@@ -7,7 +7,7 @@ public class SearchProduct {
     private SearchProduct(){}
 
     public static SearchProduct getInstance(){
-        if (instance == null) { // Only initialize if it's null
+        if (instance == null) {
             instance = new SearchProduct();
         }
         return instance;
