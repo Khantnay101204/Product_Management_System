@@ -24,7 +24,6 @@ public abstract class ProductCSVHandler {
     }
 
 
-
     private void readCSV(){
         FileReader fr = null;
         try {
@@ -65,6 +64,50 @@ public abstract class ProductCSVHandler {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static LinkedList<Product> readCSV(String filePath){
+        LinkedList<Product> list=new LinkedList<>();
+        FileReader fr = null;
+        try {
+            fr = new FileReader(filePath);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        CSVReader csvReader = new CSVReader(fr);
+        String[] str;
+        while (true) {
+            try {
+                if ((str = csvReader.readNext()) == null) break;
+            } catch (IOException | CsvValidationException e) {
+                throw new RuntimeException(e);
+            }
+            list.add(new Product(
+                    str[0],                    // name
+                    str[1],                    // description
+                    str[2],                    // brand
+                    str[3],                    // category
+                    Integer.parseInt(str[4]),   // price (Fixed)
+                    str[5],                    // currency
+                    Integer.parseInt(str[6]),   // stock (Fixed)
+                    str[7],                    // color
+                    str[8],                    // size
+                    str[9],                    // availability
+                    Integer.parseInt(str[10])   // internalID
+            ));
+
+        }
+        try {
+            csvReader.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            fr.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
     }
 
     abstract void executeOperation(LinkedList<Product> productList);

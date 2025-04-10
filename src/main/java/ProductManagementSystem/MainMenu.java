@@ -45,6 +45,9 @@ public class MainMenu {
             delete.process();
             menu(filePath);
             break;
+            case "4": ReportFactory rf=new ReportFactory();
+            rf.getReport(filePath).report();
+            menu(filePath);
             case "5": return;
             default: menu(filePath);
             break;
