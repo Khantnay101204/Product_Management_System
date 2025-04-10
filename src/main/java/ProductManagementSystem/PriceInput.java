@@ -3,7 +3,7 @@ package ProductManagementSystem;
 import java.util.Scanner;
 
 public class PriceInput implements UserInput{
-    Scanner sc=new Scanner(System.in);
+
     @Override
     public String input() {
         System.out.print("Enter price (1-1000): ");
