@@ -12,23 +12,23 @@ public class UserInputOptions {
     UserInput size;
     UserInput availability;
 
-    private UserInputOptions(){
-        name =new NameInput();
+    private UserInputOptions() {
+        name = new NameInput();
         description = new DescriptionInput();
         brand = new BrandInput();
-        category =new CategoryInput();
-        price =new PriceInput();
-        stock =new StockInput();
-        color= new ColorInput();
+        category = new CategoryInput();
+        price = new PriceInput();
+        stock = new StockInput();
+        color = new ColorInput();
         size = new SizeInput();
-        availability= new AvailabilityInput();
+        availability = new AvailabilityInput();
     }
 
     public static UserInputOptions getInstance() {
-            if (instance == null) { // Initialize only if null
-                instance = new UserInputOptions();
-            }
-            return instance;
+        if (instance == null) { // Initialize only if null
+            instance = new UserInputOptions();
+        }
+        return instance;
     }
 
     public String getName() {
@@ -67,9 +67,9 @@ public class UserInputOptions {
         return availability.input();
     }
 
-    public static void main(String[] args) {
-        UserInputOptions uin=UserInputOptions.getInstance();
-        String name= uin.getName();
-
-    }
+//    public static void main(String[] args) {
+//        UserInputOptions uin=UserInputOptions.getInstance();
+//        String name= uin.getName();
+//
+//    }
 }
