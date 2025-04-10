@@ -23,31 +23,31 @@ public class CategoryInput implements UserInput {
             }
         }
 
-        // Print the categories in pairs
+
         for (int i = 0; i < categories.length; i += 2) {
             String category1 = categories[i];
-            String category2 = (i + 1 < categories.length) ? categories[i + 1] : ""; // Handle odd number of elements
+            String category2 = (i + 1 < categories.length) ? categories[i + 1] : "";
 
             System.out.printf("%d.%-" + (maxLength + 5) + "s%d.%s%n", i + 1, category1, i + 2, category2);
         }
 
-        // Get user input for category choice
+
         System.out.print("Choose one of the above categories (1-34): ");
         String option = sc.next();
 
-        // Validate the input
+
         if (!option.matches("^(3[0-4]|[1-2]?[1-9])$")) {
             System.out.println("Invalid option. Enter again.");
-            return input();  // Recursive call if input is invalid
+            return input();
         }
 
-        // Return the selected category (adjusted for zero-based index)
+
         return categories[Integer.parseInt(option) - 1];
     }
 
-//    public static void main(String[] args) {
-//        CategoryInput categoryInput = new CategoryInput();
-//        String selectedCategory = categoryInput.input();
-//        System.out.println("You selected: " + selectedCategory);
-//    }
+    public static void main(String[] args) {
+        CategoryInput categoryInput = new CategoryInput();
+        String selectedCategory = categoryInput.input();
+        System.out.println("You selected: " + selectedCategory);
+    }
 }

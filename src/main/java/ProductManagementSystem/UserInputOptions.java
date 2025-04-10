@@ -1,6 +1,7 @@
 package ProductManagementSystem;
 
 public class UserInputOptions {
+    private static UserInputOptions instance;
     UserInput name;
     UserInput description;
     UserInput brand;
@@ -11,7 +12,7 @@ public class UserInputOptions {
     UserInput size;
     UserInput availability;
 
-    public UserInputOptions(){
+    private UserInputOptions(){
         name =new NameInput();
         description = new DescriptionInput();
         brand = new BrandInput();
@@ -22,6 +23,14 @@ public class UserInputOptions {
         size = new SizeInput();
         availability= new AvailabilityInput();
     }
+
+    public static UserInputOptions getInstance() {
+            if (instance == null) { // Initialize only if null
+                instance = new UserInputOptions();
+            }
+            return instance;
+    }
+
     public String getName() {
         return name.input();
     }
@@ -58,4 +67,9 @@ public class UserInputOptions {
         return availability.input();
     }
 
+    public static void main(String[] args) {
+        UserInputOptions uin=UserInputOptions.getInstance();
+        String name= uin.getName();
+
+    }
 }
