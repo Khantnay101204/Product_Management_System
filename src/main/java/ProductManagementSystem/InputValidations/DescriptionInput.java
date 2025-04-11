@@ -1,8 +1,8 @@
-package ProductManagementSystem;
+package ProductManagementSystem.InputValidations;
 
-import java.util.Scanner;
+import ProductManagementSystem.UserInput;
 
-public class DescriptionInput implements UserInput{
+public class DescriptionInput implements UserInput {
 
     @Override
     public String input() {

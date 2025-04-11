@@ -1,6 +1,8 @@
-package ProductManagementSystem;
+package ProductManagementSystem.InputValidations;
 
-public class ColorInput implements UserInput{
+import ProductManagementSystem.UserInput;
+
+public class ColorInput implements UserInput {
 
     @Override
     public String input() {

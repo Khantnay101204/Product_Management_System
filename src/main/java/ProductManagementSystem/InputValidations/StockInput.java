@@ -1,6 +1,8 @@
-package ProductManagementSystem;
+package ProductManagementSystem.InputValidations;
 
-public class StockInput implements UserInput{
+import ProductManagementSystem.UserInput;
+
+public class StockInput implements UserInput {
 
     @Override
     public String input() {

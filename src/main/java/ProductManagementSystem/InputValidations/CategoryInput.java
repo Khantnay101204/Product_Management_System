@@ -1,4 +1,6 @@
-package ProductManagementSystem;
+package ProductManagementSystem.InputValidations;
+
+import ProductManagementSystem.UserInput;
 
 import java.util.Scanner;
 

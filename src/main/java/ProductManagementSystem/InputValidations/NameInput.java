@@ -1,6 +1,8 @@
-package ProductManagementSystem;
+package ProductManagementSystem.InputValidations;
 
-public class NameInput implements UserInput{
+import ProductManagementSystem.UserInput;
+
+public class NameInput implements UserInput {
 
     @Override
     public String input() {

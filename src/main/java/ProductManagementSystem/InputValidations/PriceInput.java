@@ -1,8 +1,10 @@
-package ProductManagementSystem;
+package ProductManagementSystem.InputValidations;
+
+import ProductManagementSystem.UserInput;
 
 import java.util.Scanner;
 
-public class PriceInput implements UserInput{
+public class PriceInput implements UserInput {
 
     @Override
     public String input() {

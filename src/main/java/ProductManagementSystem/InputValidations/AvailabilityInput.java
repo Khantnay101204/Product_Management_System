@@ -1,4 +1,6 @@
-package ProductManagementSystem;
+package ProductManagementSystem.InputValidations;
+
+import ProductManagementSystem.UserInput;
 
 public class AvailabilityInput implements UserInput {
     @Override

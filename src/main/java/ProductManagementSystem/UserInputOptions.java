@@ -1,5 +1,7 @@
 package ProductManagementSystem;
 
+import ProductManagementSystem.InputValidations.*;
+
 public class UserInputOptions {
     private static UserInputOptions instance;
     UserInput name;
