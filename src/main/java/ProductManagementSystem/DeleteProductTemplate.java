@@ -9,7 +9,7 @@ public class DeleteProductTemplate extends ProductCSVHandlerTemplate {
     }
 
     @Override
-    void executeOperation(LinkedList<Product> productList) {
+    protected void executeOperation(LinkedList<Product> productList) {
         String name= uin.getName();
         String category= uin.getCategory();
         int idx=search.searchByName_and_Category(productList,name,category);

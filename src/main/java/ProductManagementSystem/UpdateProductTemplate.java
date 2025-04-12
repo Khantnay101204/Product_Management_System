@@ -8,7 +8,7 @@ public class UpdateProductTemplate extends ProductCSVHandlerTemplate {
     }
 
     @Override
-    void executeOperation(LinkedList<Product> productList) {
+    protected void executeOperation(LinkedList<Product> productList) {
         String name= uin.getName();
         String category= uin.getCategory();
         int idx=search.searchByName_and_Category(productList,name,category);
@@ -19,9 +19,6 @@ public class UpdateProductTemplate extends ProductCSVHandlerTemplate {
         }
         Product oldProduct = productList.get(idx);
         updateMenu(oldProduct);
-
-
-
 
     }
 

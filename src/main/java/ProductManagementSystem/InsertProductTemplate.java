@@ -9,7 +9,7 @@ public class InsertProductTemplate extends ProductCSVHandlerTemplate {
     }
 
     @Override
-    void executeOperation(LinkedList<Product> productList) {
+    protected void executeOperation(LinkedList<Product> productList) {
         int internalID = (int) (Math.random() * 99) + 1;
         String name= uin.getName();
         String category= uin.getCategory();
