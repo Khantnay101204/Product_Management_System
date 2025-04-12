@@ -2,9 +2,9 @@ package ProductManagementSystem;
 
 import java.util.LinkedList;
 
-public class InsertProduct extends ProductCSVHandler{
+public class InsertProductTemplate extends ProductCSVHandlerTemplate {
 
-    public InsertProduct(String filePath) {
+    public InsertProductTemplate(String filePath) {
         super(filePath);
     }
 

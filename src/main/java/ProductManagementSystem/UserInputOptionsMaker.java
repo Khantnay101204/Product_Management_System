@@ -2,19 +2,19 @@ package ProductManagementSystem;
 
 import ProductManagementSystem.InputValidations.*;
 
-public class UserInputOptions {
-    private static UserInputOptions instance;
-    UserInput name;
-    UserInput description;
-    UserInput brand;
-    UserInput category;
-    UserInput price;
-    UserInput stock;
-    UserInput color;
-    UserInput size;
-    UserInput availability;
+public class UserInputOptionsMaker {
+    private static UserInputOptionsMaker instance;
+    private UserInput name;
+    private UserInput description;
+    private UserInput brand;
+    private UserInput category;
+    private UserInput price;
+    private UserInput stock;
+    private UserInput color;
+    private UserInput size;
+    private UserInput availability;
 
-    private UserInputOptions() {
+    private UserInputOptionsMaker() {
         name = new NameInput();
         description = new DescriptionInput();
         brand = new BrandInput();
@@ -26,9 +26,9 @@ public class UserInputOptions {
         availability = new AvailabilityInput();
     }
 
-    public static UserInputOptions getInstance() {
+    public static UserInputOptionsMaker getInstance() {
         if (instance == null) { // Initialize only if null
-            instance = new UserInputOptions();
+            instance = new UserInputOptionsMaker();
         }
         return instance;
     }

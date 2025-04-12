@@ -1,7 +1,7 @@
 package ProductManagementSystem;
 
 public interface Report {
-    UserInputOptions uin=UserInputOptions.getInstance();
+    UserInputOptionsMaker uin= UserInputOptionsMaker.getInstance();
     SearchProduct se= SearchProduct.getInstance();
        void report();
 }

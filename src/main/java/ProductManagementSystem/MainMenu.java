@@ -1,6 +1,5 @@
 package ProductManagementSystem;
 
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class MainMenu {
@@ -33,15 +32,15 @@ public class MainMenu {
     public void menu(String filePath){
         displayMenu();
         switch (getMenuNo()){
-            case "1": ProductCSVHandler insert=new InsertProduct(filePath);
+            case "1": ProductCSVHandlerTemplate insert=new InsertProductTemplate(filePath);
             insert.process();
             menu(filePath);
             break;
-            case "2": ProductCSVHandler update=new UpdateProduct(filePath);
+            case "2": ProductCSVHandlerTemplate update=new UpdateProductTemplate(filePath);
             update.process();
             menu(filePath);
             break;
-            case "3": ProductCSVHandler delete= new DeleteProduct(filePath);
+            case "3": ProductCSVHandlerTemplate delete= new DeleteProductTemplate(filePath);
             delete.process();
             menu(filePath);
             break;

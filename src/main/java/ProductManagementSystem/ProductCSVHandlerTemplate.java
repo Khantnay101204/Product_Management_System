@@ -7,14 +7,14 @@ import java.io.*;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public abstract class ProductCSVHandler {
+public abstract class ProductCSVHandlerTemplate {
     protected LinkedList<Product> productList=new LinkedList<>();
     protected String filePath;
-    protected static UserInputOptions uin=UserInputOptions.getInstance();
+    protected static UserInputOptionsMaker uin= UserInputOptionsMaker.getInstance();
     protected static SearchProduct search=SearchProduct.getInstance();
     protected static Scanner sc=new Scanner(System.in);
 
-    public ProductCSVHandler(String filePath) {
+    public ProductCSVHandlerTemplate(String filePath) {
         this.filePath = filePath;
     }
     public final void process(){
