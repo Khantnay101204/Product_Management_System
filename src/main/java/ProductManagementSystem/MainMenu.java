@@ -32,15 +32,15 @@ public class MainMenu {
     public void menu(String filePath){
         displayMenu();
         switch (getMenuNo()){
-            case "1": ProductCSVHandlerTemplate insert=new InsertProductTemplate(filePath);
+            case "1": ProductCSVHandlerTemplate insert=new InsertProduct(filePath);
             insert.process();
             menu(filePath);
             break;
-            case "2": ProductCSVHandlerTemplate update=new UpdateProductTemplate(filePath);
+            case "2": ProductCSVHandlerTemplate update=new UpdateProduct(filePath);
             update.process();
             menu(filePath);
             break;
-            case "3": ProductCSVHandlerTemplate delete= new DeleteProductTemplate(filePath);
+            case "3": ProductCSVHandlerTemplate delete= new DeleteProduct(filePath);
             delete.process();
             menu(filePath);
             break;

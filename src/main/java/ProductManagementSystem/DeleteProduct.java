@@ -2,9 +2,9 @@ package ProductManagementSystem;
 
 import java.util.LinkedList;
 
-public class DeleteProductTemplate extends ProductCSVHandlerTemplate {
+public class DeleteProduct extends ProductCSVHandlerTemplate {
 
-    public DeleteProductTemplate(String filePath) {
+    public DeleteProduct(String filePath) {
         super(filePath);
     }
 
