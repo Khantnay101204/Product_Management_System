@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class ReportFactory {
     Scanner sc=new Scanner(System.in);
     public Report getReport(String filePath){
-        LinkedList<Product> productList= ProductCSVHandlerTemplate.readCSV(filePath);
+        LinkedList<Product> productList= ProductCSVHandleTemplate.readCSV(filePath);
         System.out.println("1. Product records of the Category sorting from highest price to the lowest.");
         System.out.println("2. The total number of products in each Category");
         System.out.println("3. Counting different Brand in each Category");
