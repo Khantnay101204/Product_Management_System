@@ -47,9 +47,9 @@ public class CategoryInput implements UserInput {
         return categories[Integer.parseInt(option) - 1];
     }
 
-    public static void main(String[] args) {
-        CategoryInput categoryInput = new CategoryInput();
-        String selectedCategory = categoryInput.input();
-        System.out.println("You selected: " + selectedCategory);
-    }
+//    public static void main(String[] args) {
+//        CategoryInput categoryInput = new CategoryInput();
+//        String selectedCategory = categoryInput.input();
+//        System.out.println("You selected: " + selectedCategory);
+//    }
 }

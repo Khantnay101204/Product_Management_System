@@ -30,9 +30,9 @@ public class AvailabilityInput implements UserInput {
 
     }
 
-    public static void main(String[] args) {
-        AvailabilityInput a=new AvailabilityInput();
-        String str=a.input();
-        System.out.println(str);
-    }
+//    public static void main(String[] args) {
+//        AvailabilityInput a=new AvailabilityInput();
+//        String str=a.input();
+//        System.out.println(str);
+//    }
 }

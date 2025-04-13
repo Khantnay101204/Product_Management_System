@@ -66,6 +66,35 @@ public abstract class ProductCSVHandlerTemplate {
         }
     }
 
+
+
+    abstract void executeOperation(LinkedList<Product> productList);
+
+    private void writeCSV() {
+        FileWriter fw= null;
+
+        try {
+            fw = new FileWriter(filePath,false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        PrintWriter pw=new PrintWriter(fw);
+
+        for(Product product: productList){
+            pw.println(product.getName() + "," + product.getDescription() + "," + product.getBrand() + "," +
+                    product.getCategory() + "," + product.getPrice() + "," + product.getCurrency() + "," +
+                    product.getStock() + "," + product.getColor() + "," + product.getSize() + "," +
+                    product.getAvailability() + "," + product.getInternalID());
+        }
+
+        pw.close();
+        try {
+            fw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static LinkedList<Product> readCSV(String filePath){
         LinkedList<Product> list=new LinkedList<>();
         FileReader fr = null;
@@ -108,33 +137,6 @@ public abstract class ProductCSVHandlerTemplate {
             throw new RuntimeException(e);
         }
         return list;
-    }
-
-    abstract void executeOperation(LinkedList<Product> productList);
-
-    private void writeCSV() {
-        FileWriter fw= null;
-
-        try {
-            fw = new FileWriter(filePath,false);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        PrintWriter pw=new PrintWriter(fw);
-
-        for(Product product: productList){
-            pw.println(product.getName() + "," + product.getDescription() + "," + product.getBrand() + "," +
-                    product.getCategory() + "," + product.getPrice() + "," + product.getCurrency() + "," +
-                    product.getStock() + "," + product.getColor() + "," + product.getSize() + "," +
-                    product.getAvailability() + "," + product.getInternalID());
-        }
-
-        pw.close();
-        try {
-            fw.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 
 
