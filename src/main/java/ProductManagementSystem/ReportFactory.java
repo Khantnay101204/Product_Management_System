@@ -12,14 +12,19 @@ public class ReportFactory {
         System.out.println("3. Counting different Brand in each Category");
         System.out.print("Option: ");
         String op=sc.nextLine();
-        return switch (op) {
-            case "1" -> new SelectedCategoryReport(productList);
-            case "2" -> new ProductNumberReport(productList);
-            case "3" -> new BrandCountReport(productList);
-            default -> {
+        switch (op){
+            case "1":
+            return new SelectedCategoryReport(productList);
+
+            case "2":
+            return new ProductNumberReport(productList);
+
+            case "3":
+                return new BrandCountReport(productList);
+
+            default:
                 System.out.println("Invalid option. Please try again.");
-                yield getReport(filePath);
-            }
-        };
+                return getReport(filePath);
+        }
     }
 }
